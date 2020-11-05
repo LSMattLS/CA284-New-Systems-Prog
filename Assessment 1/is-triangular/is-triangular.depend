@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1604580138 source:c:\users\haris\onedrive\documents\dcu\ca284\assessment 1\is-triangular\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

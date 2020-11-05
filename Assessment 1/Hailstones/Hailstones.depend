@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1604599954 source:c:\users\haris\onedrive\documents\dcu\ca284\assessment 1\hailstones\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
