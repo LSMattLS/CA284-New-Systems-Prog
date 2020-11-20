@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1605882156 source:c:\users\haris\onedrive\documents\dcu\ca284\assessment 2\case-converter\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

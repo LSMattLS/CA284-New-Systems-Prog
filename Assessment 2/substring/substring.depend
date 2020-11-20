@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1605882962 source:c:\users\haris\onedrive\documents\dcu\ca284\assessment 2\substring\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

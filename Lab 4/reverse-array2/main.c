@@ -3,18 +3,21 @@
 
 int main(int argc, char * argv[])
 {
-    int array[argc]; // Create empty array with size of arguments
+    int reversed[argc]; // Create empty array with size of arguments
 
-    for (int index = 1; index < argc; index++) // Loop through arguments and add int(element) to empty array
+    for (int index = 1; index < argc; index++) // Loop through arguments and print values
     {
-        array[index] = atoi(argv[index]);
+        int *val = &argv[index]; // Use pointers to print value @ memory address of current index
+        printf("%s\n", *val);
     }
 
-    // Loop through new array and print elements in reverse
+    // Loop through cmd arguments and print elements in reverse
     // I.e start at end and work towards start
-    for (int counter = argc - 1; counter > 0; counter--)
+    for (int counter = argc - 1; counter >= 1; counter--)
     {
-        printf("%d\n", array[counter]);
+        int *value = &argv[counter]; // Use pointers again to print values @ memory address of current index
+        reversed[counter] = *value; // Add to reversed array
+        printf("%s\n", *value);
     }
     return 0;
 }

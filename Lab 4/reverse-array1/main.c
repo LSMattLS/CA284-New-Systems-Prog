@@ -6,32 +6,22 @@
 int main(int argc, char * argv[])
 {
     #define max 5
-    int array[5]; // Create an empty array
+    int reversed[5]; // Create an empty array
 
-    // Loop through argument array and add int(elements) to new array
+    // Loop through cmd line args and print values
     for (int index = 1; index <= max; index++)
     {
-        array[index] = atoi(argv[index]);
+        int *val = &argv[index]; // Use pointers to print value @ memeory address of current index
+        printf("%s\n", *val);
     }
 
-    // Loop through new array and print items in reverse order
-    // i.e start at end and work towards start of array
-    for (int counter = max; counter > 0; counter--)
+    // Loop through cmd line backwards to add values to reversed array
+    for (int counter = max - 1; counter >= 1; counter--)
     {
-        printf("%d\n",array[counter]);
+        int *value = &argv[counter]; // Use pointers again to add value @ current memory address to new array
+        reversed[counter] = *value;
+        printf("%s\n", *value);
     }
     return 0;
 }
 
-/** Alternative Method **/
-
-/*
-int main(int argc, char * argv[])
-{
-    for (int index = 5; index > 0; index--)
-    {
-        printf("%d\n", atoi(argv[index]));
-    }
-    return 0;
-}
-*/
