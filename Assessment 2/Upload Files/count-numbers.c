@@ -1,14 +1,15 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
-// Total Uploads: 7
 // Functions to be called
 int checker(char *arguments[], int size);
 int even_odd(char *arguments[], int size);
 int prime_check(int number);
 int prime_loop(char *arguments[], int size);
 int integer_size(int number);
+int string_length(char string[30]);
+
+
 
 int main(int argc, char *argv[])
 {
@@ -29,12 +30,14 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+
+
 // Function to check for letters and negative values
 int checker(char *arguments[], int size)
 {
     for (int index = 1; index <= size - 1; index++)
     {
-        int check_len = strlen(arguments[index]); // Checks length of number before conversion to int
+        int check_len = string_length(arguments[index]); // Checks length of number before conversion to int
         int val = atoi(arguments[index]); // Conversion to int
         int *value = &val;
         int integer = val;
@@ -58,6 +61,8 @@ int checker(char *arguments[], int size)
     return 0;
 }
 
+
+
 // Function to check integer size
 int integer_size(int number)
 {
@@ -71,6 +76,24 @@ int integer_size(int number)
     }
     return count;
 }
+
+
+// Function to get length of string
+int string_length(char string[30])
+{
+    int string_length = 0; // Length of string
+
+    // Loop to get length of string (Alternative to strlen())
+    for (int i = 0; string[i] != '\0'; i++)
+    {
+        string_length++;
+    }
+
+    return string_length; // Return Length
+    return 0;
+}
+
+
 
 // Function to check for even and odd numbers
 int even_odd(char *arguments[], int size)
@@ -94,6 +117,8 @@ int even_odd(char *arguments[], int size)
     printf("Number of even numbers: %d\n", even);
     return 0;
 }
+
+
 
 // Function check if a value is a prime number
 int prime_check(int num)
@@ -119,6 +144,8 @@ int prime_check(int num)
     }
     return 0;
 }
+
+
 
 // Function to loop through array of values and return total prime numbers present
 int prime_loop(char *arguments[], int size)

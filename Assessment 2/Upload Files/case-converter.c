@@ -1,36 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
-
-// Total upload Count: 4
 
 // Functions to be called
 int checker(char str[30]);
 void converter(char string[30]);
+int string_length(char string[30]);
+
+
 
 int main()
 {
+    // String 1
     char string[30];
     printf("Enter a string of upper and lower case letters\n");
     scanf("%s", string);
 
+    // Check if String 1 is OK
     if (checker(string) == 1)
     {
-        printf("Invalid character entered.\n");
-        return 0;
+        printf("Invalid character entered.\n"); // Error Code
+        return 0; // Break out of process
     }
-    converter(string);
+    converter(string); // Convert string if it is OK
     printf("\n");
     return 0;
 }
 
+
+
+// Function to get length of string
+int string_length(char string[30])
+{
+    int string_length = 0; // Length of string
+
+    // Loop to get length of string (Alternative to strlen())
+    for (int i = 0; string[i] != '\0'; i++)
+    {
+        string_length++;
+    }
+
+    return string_length; // Return Length
+    return 0;
+}
+
+
+
 // Function to check for any integers
 int checker(char str[30])
 {
-    for (int index = 0; index <= strlen(str) - 1; index++)
+    int len = string_length(str);
+
+    for (int index = 0; index <= len - 1; index++)
     {
-        int value = str[index];
         int val = isalpha(str[index]);
 
         if (val == 0) // isalpha function returns 0 if value is an integer
@@ -41,6 +63,8 @@ int checker(char str[30])
     return 0;
 }
 
+
+
 // Function to display contents of converted array
 void display(char array[], int size)
 {
@@ -50,15 +74,18 @@ void display(char array[], int size)
     }
 }
 
+
+
 // Function to convert string
 void converter(char string[30])
 {
-    char output[strlen(string)]; // Empty array
+    int length = string_length(string);
+    char output[length]; // Empty array
 
     // Check for any integers
     if (checker(string) != 1)
     {
-        for (int index = 0; index <= strlen(string); index++)
+        for (int index = 0; index <= length; index++)
         {
             int ascii = string[index];
 
@@ -75,5 +102,5 @@ void converter(char string[30])
         }
     }
 
-    display(output, strlen(string)); // Print contents of new array
+    display(output, length); // Print contents of new array
 }

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1606134316 source:c:\users\haris\onedrive\documents\dcu\ca284\assessment 2\bin-2-dec\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+

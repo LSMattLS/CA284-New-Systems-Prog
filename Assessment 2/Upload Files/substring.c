@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
 
+// Functions to be called
 void checker(char string[30], char checkstring[30]);
 int search(char str[30]);
+int string_length(char str[30]);
+
+
 
 int main()
 {
@@ -36,12 +39,14 @@ int main()
     }
 }
 
+
+
 // Function to check for any integers
 int search(char str[30])
 {
-    for (int index = 0; index <= strlen(str) - 1; index++)
+    int len = string_length(str);
+    for (int index = 0; index <= len - 1; index++)
     {
-        int value = str[index];
         int val = isalpha(str[index]);
 
         if (val == 0) // isalpha function returns 0 if value is an integer
@@ -52,10 +57,29 @@ int search(char str[30])
     return 0;
 }
 
+
+
+// Function to get length of string
+int string_length(char string[30])
+{
+    int string_length = 0; // Length of string
+
+    // Loop to get length of string (Alternative to strlen())
+    for (int i = 0; string[i] != '\0'; i++)
+    {
+        string_length++;
+    }
+
+    return string_length; // Return Length
+    return 0;
+}
+
+
+
 void checker(char string[30], char checkstring[30])
 {
     // Length1 = length of main string, Length2 = length of substring
-    int length1 = strlen(string) - 1, length2 = strlen(checkstring), total = 0;
+    int length1 = string_length(string) - 1, length2 = string_length(checkstring), total = 0;
 
     for (int index1 = 0; index1 <= length1; index1++) // Loop through main string
     {
@@ -70,6 +94,7 @@ void checker(char string[30], char checkstring[30])
             }
         }
     }
+    // Compare string sizes
     if (total == length2)
     {
         printf("the string '%s' is contained in the string '%s'\n", checkstring, string);
