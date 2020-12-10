@@ -1,0 +1,48 @@
+In C, we can think of a string as an array of characters.
+
+Unlike other programming languages such as Python, C stores characters in an array and assigns each character a 
+memory location as it is a low level language which deals with the very 1's and 0's of computing.
+
+How strings are created?
+------------------------
+
+In order to define a string, we must first enclose the required characters in a quotation mark.
+
+Eg. If we want to store the word hello as a string, we must declare it as "hello"
+
+When the compiler encounters a double quotation mark, it will automatically append a \0 (null character) at the
+end of the string which in return will mark the end of that string.
+
+C will then store each character in an array and assign each character a unique memory location.
+
+Eg. char word[] = "hello"
+
+    index | 0  1   2   3   4   5
+          |----------------------
+    value | h  e   l   l   o   \0
+
+
+Eg2. char word2[] = "dublin"
+    index | 0  1  2  3  4  5  6
+          |
+    value | d  u  b  l  i  n  \0
+
+
+
+How strings are manipulated?
+----------------------------
+
+In C, null terminated strings can be quite easily manipulated but it should be done in a careful and responsible manner as
+we are dealing with memory and indexes.
+
+There are multiple in built functions that can help with string manipulation
+
+Eg. strlen() = returns the length of a string
+
+    strlen("hello") = 5
+
+
+
+
+
+

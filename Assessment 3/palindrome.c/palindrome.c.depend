@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1607417831 source:c:\users\haris\onedrive\documents\dcu\ca284\assessment 3\palindrome.c\main.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+

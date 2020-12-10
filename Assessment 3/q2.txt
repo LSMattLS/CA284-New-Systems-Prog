@@ -1,0 +1,71 @@
+
+
+Functions to be created:
+------------------------
+
+------------
+1. Main()
+------------
+
+Receive inputs from user and store it in a variable
+
+
+
+----------------------------
+2. int checker(int integers)
+----------------------------
+
+Purpose: Checks if integer provided sattisfies all the conditions mentioned in the task
+Output: Prints error if failure or returns 0 if success
+
+Steps:
+     Create a counter variable and initialise an integer array. Loop through each item in the user input and 
+     add that value to the new integer array. Also increment the counter variable everytime the loop goes around. After program
+     has terminated, If the value at counter is greater than 3, then output an error message as this exceeds the given range.
+
+     Eg1. 
+     user_input = 435
+     counter = 3
+
+                         Index | 0  1  2
+     Integer array:            |---------
+                         value | 4  3  5
+
+     -------------------------------------------
+
+     Eg2. 
+     user_input = 5632
+     counter = 4
+
+                    Index | 0  1  2  3 
+     Integer array:       |------------
+                    value | 5  6  3  2
+
+output: Error (size > 3)
+
+
+
+------------------------------
+3. int converter(int integers)
+------------------------------
+    Purpose: Convert and print the integers into its english format
+    Output: Print english format of the integers
+
+    Steps:
+     Create a character array and store the english value of integers between 0-9 in it
+     Eg.
+          - "zero", "one", "two", "three", ....
+
+     Create another character array which will store the teens in the range 11-19
+     Eg. 
+          - "eleven", "twelve", "thirteen", "fourteen", .....
+    
+     Create another character array which will store the multiples of ten in the range 10-90
+     Eg.
+          - "ten", "twenty", "thirty", fourty", .....
+     
+
+     While value != 0:
+          - Check if val @ index 0 is negative
+          - Check if val @ index is hundred, tens etc. and print corresponding values
+          - Make sure to print the string "hundred" after the first integer
