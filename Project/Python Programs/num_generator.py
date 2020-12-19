@@ -27,7 +27,7 @@ def generate():
         nums1.append(randint(0, 1050)) 
     
     # Output message
-    print("Random:", nums1)
+    print("Random:", stringify(nums1))
 
     # --------------------- Sorts only first half ---------------------------
 
@@ -57,7 +57,7 @@ def generate():
     # - nums2 = [4, 43, 67, 90, 2, 12]
 
     # Output Message
-    print("Half sorted, half unsorted:", nums2)
+    print("Half sorted, half unsorted:", stringify(nums2))
 
     # ---------------------- Sorted in reverse order ------------------------
 
@@ -75,7 +75,7 @@ def generate():
     #   new list = [90, 67, 43, 12, 4, 2]
 
     # Output Message
-    print("Reverse sorted:", nums3)
+    print("Reverse sorted:", stringify(nums3))
 
 
     # --------------------- only even numbers sorted -------------------------
@@ -105,12 +105,22 @@ def generate():
     # final list = [5, 7, 9, 2, 3, 4, 6]
 
     # Output Message
-    print("Only Even numbers sorted:", nums1)
+    print("Only Even numbers sorted:", stringify(nums1))
     
     # --------------------- Already sorted -------------------------
     nums1 = sorted(nums1)
-    print("Already sorted:", nums1)
+    print("Already sorted:", stringify(nums1))
 
+
+
+# Function to convert list into string format
+def stringify(lis):
+    string = ""
+    
+    for item in lis:
+        string += str(item) + " "
+    
+    return string
 
 # Test
 generate()
